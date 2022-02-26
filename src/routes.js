@@ -1,7 +1,9 @@
 const routes = require('express').Router();
 const schoolsController = require('./controllers/schoolsController');
 const gradesController = require('./controllers/gradesController');
+const userController = require('./controllers/userController');
 
+routes.post('/login', userController.login)
 routes.get('/schools', schoolsController.index);
 routes.get('/schools/:id', schoolsController.show);
 routes.put('/schools/:id', schoolsController.update);
