@@ -1,7 +1,7 @@
-const { School } = require('../models/');
+const { School, Grade } = require('../models/');
 
 const index = async () => {
-  const list = await School.findAll();
+  const list = await School.findAll({ include: [{ model: Grade, as: 'grades', foreignKey: 'school_id'}]});
   return list;
 };
 

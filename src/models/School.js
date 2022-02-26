@@ -9,5 +9,12 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'schools',
   });
 
+  School.associate = (models) => {
+    School.hasMany(models.Grade, {
+      foreignKey: 'school_id',
+      as: 'grades',
+    })
+  };
+
   return School;
 }

@@ -8,5 +8,12 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'grades',
   });
 
+  Grade.associate = (models) => {
+    Grade.belongsTo(models.School, {
+      foreignKey: 'school_id',
+      as: 'school',
+    });
+  };
+
   return Grade;
 }
