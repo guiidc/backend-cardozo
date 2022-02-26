@@ -18,7 +18,7 @@ routes.delete('/schools/:id', validateToken, schoolsController.remove);
 // grades
 routes.get('/grades', validateToken, gradesController.index);
 routes.get('/grades/:id', validateToken, gradesController.show);
-routes.post('/grades/:id', validateToken, gradesController.store);
+routes.post('/grades', validateToken, gradesController.store);
 routes.put('/grades/:id', validateToken, gradesController.update);
 routes.delete('/grades/:id', validateToken, gradesController.remove);
 
