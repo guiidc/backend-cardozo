@@ -9,6 +9,10 @@ const show = async (id) => {
   const school = await School.findByPk(id);
   return school;
 };
+const store = async (data) => {
+  const storedSchool = await School.create(data);
+  return storedSchool;
+};
 const update = async (id, data) => {
   const updatedId = await School.update(data, {where: {id}});
   return updatedId;
@@ -22,6 +26,7 @@ const remove = async (id) => {
 module.exports = {
   index,
   show,
+  store,
   update,
   remove,
 };

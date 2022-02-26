@@ -9,6 +9,10 @@ const show = async (id) => {
   const grade = await Grade.findByPk(id);
   return grade;
 };
+const store = async (data) => {
+  const storedGrade = await Grade.create(data);
+  return storedGrade;
+};
 const update = async (id, data) => {
   const updatedId = await Grade.update(data, {where: {id}});
   return updatedId;
@@ -22,6 +26,7 @@ const remove = async (id) => {
 module.exports = {
   index,
   show,
+  store,
   update,
   remove,
 };

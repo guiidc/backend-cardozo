@@ -9,6 +9,10 @@ const show = async (req, res) => {
   const school = await schoolsService.show(id);
   return res.status(200).json(school)
 };
+const store = async (req, res) => {
+  const storedSchool = await schoolsService.store(req.body);
+  return res.status(201).json(storedSchool)
+};
 const update = async (req, res) => {
   const {id} = req.params
   const updatedId = await schoolsService.update(id, req.body);
@@ -23,6 +27,7 @@ const remove = async (req, res) => {
 module.exports = {
   index,
   show,
+  store,
   update,
   remove,
 }
